@@ -1,9 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import ProductTemplate from "./components/productTemplate";
+import ShopTemplate from "./components/shopTemplate";
 
 function App() {
-  return <ProductTemplate />;
+  return (
+    <>
+      <ShopTemplate />
+    </>
+  );
 }
 
 export default App;
