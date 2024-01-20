@@ -4,15 +4,15 @@ import ProductList from "./productList";
 import ProductInsert from "./productInsert";
 
 const ProductTemplate = ({ addCart }) => {
-  const newId = useRef(2);
+  const newId = useRef(3);
   const [products, setProducts] = useState([
     {
-      id: 0,
+      id: 1,
       name: "소주",
       price: 6000,
     },
     {
-      id: 1,
+      id: 2,
       name: "맥주",
       price: 6000,
     },
@@ -52,6 +52,7 @@ const ProductContainer = styled.div`
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
   }
+  border-right: 1px solid #c4c4c4;
 `;

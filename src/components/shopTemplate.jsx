@@ -5,8 +5,8 @@ import { useState } from "react";
 
 const ShopTemplate = () => {
   const [cartItem, setCartItem] = useState([
-    { id: 5, name: "소주", price: 3600 },
-    { id: 6, name: "맥주", price: 3600 },
+    { id: 0, name: "기본상품", price: 0 },
+    // { id: 6, name: "맥주", price: 3600 },
   ]);
   const addCart = (products) => {
     const newCartList = [
@@ -16,6 +16,7 @@ const ShopTemplate = () => {
         price: products.price,
       },
     ];
+    
     setCartItem(cartItem.concat(newCartList));
   };
   // console.log(cartItem);

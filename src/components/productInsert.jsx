@@ -22,16 +22,22 @@ const ProductInsert = ({ onInsert }) => {
   return (
     <InputContainer>
       <InputWrap>
-        <ProductInput
-          onChange={onChangeName}
-          value={name}
-          placeholder="상품 이름"
-        />
-        <ProductInput
-          onChange={onChangePrice}
-          value={price}
-          placeholder="상품 가격"
-        />
+        <div>
+          <span>상품 이름</span>
+          <ProductInput
+            onChange={onChangeName}
+            value={name}
+            placeholder="상품 이름"
+          />
+        </div>
+        <div>
+          <span>상품 가격</span>
+          <ProductInput
+            onChange={onChangePrice}
+            value={price}
+            placeholder="상품 가격"
+          />
+        </div>
       </InputWrap>
       <AddButton onClick={addInput}>추가</AddButton>
     </InputContainer>
@@ -49,6 +55,10 @@ const InputWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  > div > span {
+    font-size: 16px;
+    margin-right: 10px;
+  }
 `;
 
 const ProductInput = styled.input`
@@ -63,7 +73,7 @@ const AddButton = styled.button`
   width: 100px;
   height: 30px;
   font-size: 15px;
-  background-color: #fbfbd5;
+  background-color: #a3a3fc;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
 `;

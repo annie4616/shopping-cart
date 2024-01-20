@@ -5,7 +5,7 @@ const CartList = ({ cartItem, onDelete }) => {
   console.log(cartItem);
   return (
     <CartContainer>
-      <div>쇼핑카트</div>
+      <div>쇼핑 카트</div>
       <ul>
         {cartItem.map((item) => (
           <CartCard cartItem={item} key={item.id} onDelete={onDelete} />
@@ -22,4 +22,10 @@ const CartContainer = styled.div`
   background-color: #dbdbdb;
   width: 35%;
   height: 100vh;
+  > div {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
 `;
