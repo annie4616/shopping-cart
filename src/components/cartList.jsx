@@ -3,15 +3,18 @@ import CartCard from "./cartCard";
 
 const CartList = ({ cartItem, onDelete }) => {
   console.log(cartItem);
+  // const TotalPrice = () => {
+
+  // }
   return (
     <CartContainer>
-      <div>쇼핑 카트</div>
+      <Cart>쇼핑 카트</Cart>
       <ul>
         {cartItem.map((item) => (
           <CartCard cartItem={item} key={item.id} onDelete={onDelete} />
         ))}
       </ul>
-      <div>총 가격: {}</div>
+      <Total>총 가격: {} 원</Total>
     </CartContainer>
   );
 };
@@ -22,10 +25,16 @@ const CartContainer = styled.div`
   background-color: #dbdbdb;
   width: 35%;
   height: 100vh;
-  > div {
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-  }
+`;
+const Cart = styled.div`
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+`;
+
+const Total = styled.div`
+  font-size: 17px;
+  font-weight: 400;
+  margin-left: 40px;
 `;

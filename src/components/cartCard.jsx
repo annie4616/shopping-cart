@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const CartCard = ({ cartItem, onDelete }) => {
@@ -13,6 +13,9 @@ const CartCard = ({ cartItem, onDelete }) => {
       setCount(count - 1);
     }
   };
+  useEffect(() => {
+    console.log(price * count);
+  }, [count]);
   return (
     <>
       <Cart>

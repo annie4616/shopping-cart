@@ -16,8 +16,12 @@ const ShopTemplate = () => {
         price: products.price,
       },
     ];
-    
-    setCartItem(cartItem.concat(newCartList));
+
+    if (cartItem.every((cartItem) => cartItem.id !== products.id)) {
+      setCartItem(cartItem.concat(newCartList));
+    } else {
+      alert("이미 추가된 상품입니다 !");
+    }
   };
   // console.log(cartItem);
   const onDelete = (id) => {
@@ -25,6 +29,10 @@ const ShopTemplate = () => {
     setCartItem(newCartList);
     // console.log(id);
   };
+  // const Totalprice = () => {
+  //   return(
+  //     <></> )
+  // }
   return (
     <Container>
       <ProductTemplate addCart={addCart} />
