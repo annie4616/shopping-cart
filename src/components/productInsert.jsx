@@ -56,15 +56,16 @@ const InputWrap = styled.div`
   flex-direction: column;
   align-items: center;
   > div > span {
-    font-size: 16px;
+    font-size: 15px;
     margin-right: 10px;
+    font-weight: lighter;
   }
 `;
 
 const ProductInput = styled.input`
   width: 300px;
   height: 25px;
-  border: 1px solid gray;
+  border: 1px solid #dbdbdb;
   border-radius: 5px;
   margin-bottom: 10px;
 `;
@@ -73,7 +74,7 @@ const AddButton = styled.button`
   width: 100px;
   height: 30px;
   font-size: 15px;
-  background-color: #a3a3fc;
+  background-color: #fdcb6f;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
 `;

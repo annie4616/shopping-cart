@@ -1,29 +1,24 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const CartCard = ({ cartItem, onDelete }) => {
-  console.log(cartItem);
-  const { id, name, price } = cartItem;
-  const [count, setCount] = useState(1);
-  const addCount = () => {
-    setCount(count + 1);
-  };
-  const minusCount = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
-  useEffect(() => {
-    console.log(price * count);
-  }, [count]);
+const CartCard = ({ cartItem, onDelete, addCount, minusCount }) => {
+  // console.log(cartItem);
+  const { id, name, price, count } = cartItem;
+  // const [count, setCount] = useState(1);
+
+  // useEffect(() => {
+  //   console.log(price * count);
+  // }, [count]);
   return (
     <>
       <Cart>
         <Name>{name}</Name>
         <Price>{price} 원</Price>
-        <CartButton onClick={addCount}>+</CartButton>
-        <Count>{count}</Count>
-        <CartButton onClick={minusCount}>-</CartButton>
+        <Counter>
+          <CartButton onClick={() => addCount(id)}>+</CartButton>
+          <Count>{count}</Count>
+          <CartButton onClick={() => minusCount(id)}>-</CartButton>
+        </Counter>
         <Delete onClick={() => onDelete(id)}>X</Delete>
       </Cart>
     </>
@@ -34,7 +29,7 @@ export default CartCard;
 
 const Cart = styled.li`
   height: 30px;
-  width: 300px;
+  width: 330px;
   border: 1px solid gray;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -43,17 +38,21 @@ const Cart = styled.li`
   padding-left: 15px;
   align-items: center;
 `;
+const Counter = styled.div`
+  width: 18%;
+`;
 const Name = styled.span`
   width: 45%;
 `;
 const Price = styled.span`
-  width: 20%;
+  width: 23%;
   margin-right: 5px;
 `;
 const CartButton = styled.button`
   background-color: transparent;
   border: 1px solid gray;
   border-radius: 3px;
+  font-size: 15px;
 `;
 const Delete = styled.button`
   background-color: #fd8989;
@@ -62,7 +61,7 @@ const Delete = styled.button`
   border-radius: 3px;
   margin-left: 7px;
   height: 23px;
-  width: 30px;
+  width: 25px;
 `;
 const Count = styled.span`
   margin: auto 3px auto 3px;

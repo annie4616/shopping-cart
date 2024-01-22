@@ -47,7 +47,7 @@ export default ProductTemplate;
 const ProductContainer = styled.div`
   width: 65%;
   height: 100vh;
-  background-color: antiquewhite;
+  background-color: #fff5e7;
   > div {
     margin-top: 20px;
     text-align: center;
